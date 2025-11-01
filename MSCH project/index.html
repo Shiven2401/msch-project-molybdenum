@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molybdenum (Mo) - Materials Science</title>
+    <style>
+      /* Base reset and typography */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border-color: var(--border);
+      }
+
+      body {
+        font-family: sans-serif;
+        background: var(--background);
+        color: var(--foreground);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Header */
+      header {
+        background: #000;
+        color: #60a5fa;
+        /* blue-400 */
+        padding: 0.5rem 1rem;
+      }
+
+      header .logo {
+        font-size: 1.125rem;
+        font-weight: bold;
+      }
+
+      /* Hero Section */
+      main {
+        background: linear-gradient(to bottom, #111827, #111827 50%, #1f2937);
+        color: #dbeafe;
+        min-height: calc(100vh - 120px);
+      }
+
+      .hero {
+        position: relative;
+        padding: 1.5rem 1rem;
+        overflow: hidden;
+      }
+
+      /* Grid pattern background */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.1;
+        background-image: radial-gradient(
+          rgba(59, 130, 246, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+      }
+
+      .hero > .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, #60a5fa, #a78bfa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        color: #d1d5db;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Animated circle */
+      .circle {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+        flex-shrink: 0;
+      }
+
+      .circle .bg-gradient {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: linear-gradient(to bottom right, #3b82f6, #a78bfa);
+        animation: pulse 2s infinite;
+      }
+
+      .circle .inner {
+        position: absolute;
+        inset: 0.5rem;
+        border-radius: 50%;
+        background: #1f2937;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .circle .inner .num {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #60a5fa;
+      }
+
+      .circle .inner .symbol {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #93c5fd;
+      }
+
+      .circle .spinner {
+        position: absolute;
+        inset: 0;
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        border-radius: 50%;
+        animation: spin-slow 8s linear infinite;
+      }
+
+      /* Section Cards */
+      .card {
+        background: rgba(31, 41, 55, 0.5);
+        border: 1px solid #374151;
+        border-radius: var(--radius);
+        margin-bottom: 1rem;
+      }
+
+      .card-content {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+        color: #dbeafe;
+      }
+
+      /* Updated header style for subsection titles */
+      .card h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+      }
+
+      .card ul {
+        list-style: none;
+      }
+
+      .card li {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      /* Grid Layout for Sections */
+      .sections-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .sections-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background: #000;
+        color: #9ca3af;
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+      }
+
+      footer .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer .footer-logo {
+        color: #60a5fa;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+
+      /* Keyframes for animations */
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(0.95);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+      }
+
+      @keyframes spin-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <a href="/" class="logo">Materials Science for Chemical Engineers</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div
+          class="container hero-content"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              flex: 1;
+              min-width: 250px;
+            "
+          >
+            <img
+              src="./image.png"
+              alt="Molybdenum Element"
+              style="width: 150px; height: auto"
+            />
+            <!-- Text content -->
+            <div>
+              <h1>Molybdenum (Mo)</h1>
+              <i style="font-size: 1rem"
+                >Molybdenum was discovered in 1781 by Carl Wilhelm Scheele, who
+                identified it in molybdenite (MoS₂). In 1782, Peter Jacob Hjelm
+                isolated the metal by reducing molybdenum oxide with carbon. Its
+                name comes from the Greek word molybdos, meaning "lead."</i
+              >
+              <p>Element with Atomic Number 42</p>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 0.5rem;
+                  font-size: 0.875rem;
+                "
+              >
+                <div
+                  style="
+                    background: rgba(30, 58, 138, 0.5);
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.25rem;
+                    border: 1px solid rgba(59, 130, 246, 0.5);
+                  "
+                >
+                  <strong style="color: #60a5fa">Symbol:</strong> Mo
+                </div>
+                <div
+                  style="
+                    background: rgba(30, 58, 138, 0.5);
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.25rem;
+                    border: 1px solid rgba(59, 130, 246, 0.5);
+                  "
+                >
+                  <strong style="color: #60a5fa">Mass:</strong> 95.95 u
+                </div>
+                <div
+                  style="
+                    background: rgba(30, 58, 138, 0.5);
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.25rem;
+                    border: 1px solid rgba(59, 130, 246, 0.5);
+                  "
+                >
+                  <strong style="color: #60a5fa">Category:</strong> Transition
+                  Metal
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right side: circle -->
+          <div class="circle">
+            <div class="bg-gradient"></div>
+            <div class="inner">
+              <div class="num">42</div>
+              <div class="symbol">Mo</div>
+            </div>
+            <div class="spinner"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Sections -->
+      <div class="container" style="padding: 1rem 0">
+        <div class="sections-grid">
+          <!-- General Information Section -->
+          <section id="general">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+            General Properties
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='general.html';"
+                >
+                General Properties
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Physical Properties Section -->
+          <section id="physical">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+            Physical Properties
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='physical.html';"
+                >
+                Physical Properties
+
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Chemical Properties Section -->
+          <section id="chemical">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+            Chemical Properties
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='chemical.html';"
+                >
+                Chemical Properties
+
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Isotopes Section -->
+          <section id="isotopes">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Isotopes
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='isotopes.html';"
+                >
+                  Isotopes
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Occurrence Section -->
+          <section id="occurrence">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Occurrence &amp; Abundance
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='occurance.html';"
+                >
+                  View Occurrence &amp; Abundance
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Uses & Applications Section -->
+          <section id="uses">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Uses &amp; Applications
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='application.html';"
+                >
+                  View Uses &amp; Applications
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Toxicity & Safety Section -->
+          <section id="toxicity">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Toxicity &amp; Safety
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='toxicity.html';"
+                >
+                  View Toxicity &amp; Safety
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Interesting Facts Section -->
+          <section id="facts">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Interesting Facts
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='facts.html';"
+                >
+                  Interesting Facts
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="facts">
+            <h2
+              style="
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #60a5fa;
+                margin-bottom: 0.5rem;
+              "
+            >
+              Graphs
+            </h2>
+            <div class="card">
+              <div
+                class="card-content"
+                style="
+                  font-size: 0.875rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 1rem;
+                "
+              >
+                <button
+                  style="
+                    background: #3b82f6;
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    border-radius: 0.25rem;
+                    font-size: 0.875rem;
+                    cursor: pointer;
+                  "
+                  onclick="window.location.href='graphs.html';"
+                >
+                  Interesting Facts
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section style="padding: 1rem 0; margin-top: 1rem"></section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div>
+          <div
+            class="footer-logo"
+            style="font-size: 0.875rem; margin-bottom: 0.25rem"
+          >
+            Materials Science for Chemical Engineers
+          </div>
+          <p>Comprehensive information about chemical elements and materials</p>
+        </div>
+        <div>
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Materials Science Database
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

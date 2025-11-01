@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molybdenum Graphs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#0f172a",
+              "navy-light": "#1e293b",
+              "blue-accent": "#3b82f6",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-navy text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-black py-4">
+      <div class="container mx-auto px-4">
+        <h1 class="text-blue-accent text-2xl font-bold">Molybdenum Graphs</h1>
+      </div>
+    </header>
+
+    <!-- Main Content: Grid of 8 Graphs with Descriptions -->
+    <main class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Graphs with descriptions -->
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph1.jpg" alt="Graph 1" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>1. Thermodynamic Properties (Cp):</strong> High specific heat capacity, stable under extreme thermal conditions.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph2.jpg" alt="Graph 2" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>2. Vapour Pressure:</strong> Extremely low under standard conditions, ensuring minimal material loss.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph3.jpg" alt="Graph 3" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>3. Atomic Emission Spectrum:</strong> Displays distinct spectral lines for precise elemental identification.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph4.jpg" alt="Graph 4" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>4. Phase Diagram:</strong> Highlights molybdenum's solid state at extreme temperatures.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph5.jpg" alt="Graph 5" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>5. Stress vs Strain Curve:</strong> Demonstrates high yield strength and robust mechanical behavior.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph6.jpg" alt="Graph 6" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>6. Atomic Packing:</strong> Body-centered cubic (BCC) structure contributing to high strength.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph7.jpg" alt="Graph 7" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>7. XRD Radiation:</strong> Confirms BCC lattice arrangement, useful for structural assessment.</p>
+        </div>
+        <div class="bg-navy-light rounded-lg shadow-lg p-4">
+          <img src="graph8.jpg" alt="Graph 8" class="w-full h-48 object-contain" />
+          <p class="mt-2 text-gray-300"><strong>8. Additional Data:</strong> Extra analysis supporting molybdenum’s material properties.</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
